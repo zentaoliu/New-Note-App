@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans SC", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background-color: #f5f5f7;
+  color: #1f2933;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.control-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(31, 41, 51, 0.08);
+}
+
+.control-panel label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.control-panel input,
+.control-panel textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d6dde5;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.control-panel textarea {
+  min-height: 120px;
+}
+
+.control-panel .actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button.primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #1f2933;
+}
+
+button.danger {
+  background: #f87171;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.segment {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  position: relative;
+  border-left: 4px solid transparent;
+}
+
+.segment-text {
+  font-size: 17px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  cursor: text;
+}
+
+.segment.has-note .segment-text {
+  padding-right: 40px;
+}
+
+.segment.active {
+  border-left-color: #2563eb;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+  background: #eef4ff;
+}
+
+.segment.active .segment-text {
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.note-row {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-row.active {
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.18);
+}
+
+.note-content {
+  white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.note-meta {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.note-editor textarea {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 8px;
+  border: 1px solid #94a3b8;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.toolbar {
+  position: absolute;
+  background: #111827;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+  z-index: 1000;
+  transform: translate(-50%, -140%);
+}
+
+.toolbar.hidden {
+  display: none;
+}
+
+.toolbar button {
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.toolbar button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.toast {
+  position: relative;
+  padding: 12px 16px;
+  margin: 12px;
+  background: #111827;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.3);
+  animation: fade-in 0.25s ease;
+}
+
+.toast.success {
+  background: #16a34a;
+}
+
+.toast.error {
+  background: #dc2626;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #app {
+    padding: 16px 12px 40px;
+  }
+
+  .segment {
+    padding: 14px 16px;
+  }
+}
