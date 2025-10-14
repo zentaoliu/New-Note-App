@@ -78,7 +78,11 @@ function persistState() {
     segments: state.segments,
     notes: state.notes,
   };
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
+  try {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
+  } catch (error) {
+    console.warn("Failed to persist state:", error);
+  }
 }
 
 function getNoteBySegmentId(segmentId) {

@@ -1,0 +1,9 @@
+{
+  "name": "study-record-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "学习记录软件的最小可用版静态前端及本地服务器脚本。",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
